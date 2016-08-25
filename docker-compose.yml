@@ -10,7 +10,7 @@ services:
     links:
     - db
     environment:
-      MYSQL_HOST: "db:3306"
+      MYSQL_HOST: "db"
       MYSQL_PASS: "B5kqUmt6VsggCB2JwfRoq24H/qsfkUA6vBkPTuCaLuI="
     volumes:
     # DEV
