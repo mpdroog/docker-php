@@ -1,0 +1,30 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+    - "8008:80"
+    - "8009:443"
+    depends_on:
+    - db
+    links:
+    - db
+    environment:
+      MYSQL_HOST: "db:3306"
+      MYSQL_PASS: "B5kqUmt6VsggCB2JwfRoq24H/qsfkUA6vBkPTuCaLuI="
+    volumes:
+    # DEV
+    - "./root/var/www:/var/www"
+
+  db:
+    image: percona/percona-xtradb-cluster:latest  
+    ports:
+    - "3306:3306"
+    volumes:
+    - "./.data/db:/var/lib/mysql"
+    environment:
+      CLUSTER_NAME: simplesite
+      MYSQL_ROOT_PASSWORD: B5kqUmt6VsggCB2JwfRoq24H/qsfkUA6vBkPTuCaLuI=
+      XTRABACKUP_PASSWORD: rEHzJnKqafBzJEx8Iov56rvljRynlZ+CuvCtXpinvvc=
+      # DISCOVERY_SERVICE: 192.168.1.1
+
