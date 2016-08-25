@@ -1,5 +1,5 @@
 <?php
 namespace prj;
 
-class ProjectValidators {
+trait ProjectValidators {
 }

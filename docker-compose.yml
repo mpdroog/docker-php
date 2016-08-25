@@ -1,3 +1,4 @@
+# DEV config
 version: '2'
 services:
   web:
@@ -12,8 +13,8 @@ services:
     environment:
       MYSQL_HOST: "db"
       MYSQL_PASS: "B5kqUmt6VsggCB2JwfRoq24H/qsfkUA6vBkPTuCaLuI="
+      DEV: "1"
     volumes:
-    # DEV
     - "./root/var/www:/var/www"
 
   db:
