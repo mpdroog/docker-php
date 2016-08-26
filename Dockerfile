@@ -3,7 +3,7 @@ MAINTAINER RootDev <mpdroog@rootdev.nl>
 
 # Environments
 ENV TIMEZONE            UTC
-COPY root/ /
+#COPY root/ /
 
 # s6 overlay
 RUN apk add --no-cache wget \
@@ -35,4 +35,3 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
 EXPOSE 80 443
 
 ENTRYPOINT ["/init"]
-
